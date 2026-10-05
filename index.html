@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servizi | Igiene Industriale, EHS & Chemical Compliance</title>
+    <!-- Font Awesome per le icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+            color: #333;
+            background-color: #fafafa;
+        }
+        
+        /* Header principale - UNIFORMATO alle sezioni */
+        header.main-header {
+            background: linear-gradient(135deg, #1a4a8a 0%, #0d1b2a 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        /* Immagine logo nell'intestazione */
+        header.main-header .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        header.main-header .logo-container img {
+            max-width: 150px;
+            height: auto;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
+        
+        header.main-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header.main-header .tagline {
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+        
+        /* Menu di navigazione - NON sticky - COLORE COMPLEMENTARE VERDE/TEAL */
+nav.navigation-menu {
+    background: linear-gradient(135deg, #2db894 0%, #1a7a8e 100%);
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+        
+        nav.navigation-menu ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0;
+            margin: 0;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+        
+        nav.navigation-menu li {
+            position: relative;
+        }
+        
+        nav.navigation-menu a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 0.6rem;
+            transition: background-color 0.3s ease;
+            font-weight: 500;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            text-align: center;
+        }
+        
+        nav.navigation-menu a i {
+            margin-right: 0.5rem;
+            font-size: 0.95em;
+            width: 22px;
+            text-align: center;
+            display: inline-block;
+        }
+        
+        nav.navigation-menu a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        /* Media queries per layout menu responsive */
+        @media (max-width: 1600px) {
+            nav.navigation-menu ul {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            
+            nav.navigation-menu li {
+                flex: 0 0 calc(33.333% - 1rem);
+                margin-bottom: 0.5rem;
+            }
+        }
+        
+        @media (max-width: 1024px) {
+            nav.navigation-menu li {
+                flex: 0 0 calc(50% - 1rem);
+            }
+            
+            nav.navigation-menu a {
+                font-size: 0.9rem;
+                padding: 0.8rem 0.5rem;
+                justify-content: flex-start;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header.main-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            header.main-header .logo-container img {
+                max-width: 120px;   /* Più piccolo su tablet */
+            }
+            
+            section h2 {
+                font-size: 1.3rem;
+            }
+            
+            article {
+                padding: 1.5rem;
+            }
+            
+            nav.navigation-menu ul {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            nav.navigation-menu li {
+                width: 100%;
+                margin-bottom: 0;
+            }
+            
+            nav.navigation-menu a {
+                padding: 0.8rem 1.2rem;
+                font-size: 0.9rem;
+                justify-content: flex-start;
+                text-align: left;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            header.main-header h1 {
+                font-size: 1.5rem;
+            }
+            
+            header.main-header .logo-container img {
+                max-width: 100px;   /* Ancora più piccolo su mobile */
+            }
+            
+            nav.navigation-menu a {
+                padding: 0.8rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Sezione introduttiva - ALLARGATA */
+        .intro {
+            max-width: 1040px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .intro p {
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Contenuto principale */
+        main {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        /* Sezioni servizi */
+        section {
+            background: white;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            scroll-margin-top: 20px;
+        }
+        
+        section:hover {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        
+        section header {
+            background: linear-gradient(135deg, #1a4a8a 0%, #0d1b2a 100%);
+            color: white;
+            padding: 1.5rem 2rem;
+            text-align: left;
+        }
+        
+        section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        section .subtitle {
+            font-weight: 400;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+        
+        article {
+            padding: 2rem;
+            line-height: 1.4;
+        }
+        
+        h3 {
+            color: #1a4a8a;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            border-left: 4px solid #1a4a8a;
+            padding-left: 1rem;
+        }
+        
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        article ul {
+            line-height: 1.4;
+        }
+        
+        li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #1a4a8a;
+            font-weight: bold;
+        }
+        
+        .highlight {
+            background: #e8f4fc;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        footer {
+            background: #0d1b2a;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <!-- Containere per il logo -->
+        <div class="logo-container">
+            <img src="D:\studiofini.png" alt="Logo Studio Fini">
+        </div>
+        <h1>Servizi - StudioFini</h1>
+        <p class="tagline">Igiene Industriale, EHS & Chemical Compliance</p>
+    </header>
+    
+    <!-- Menu di navigazione con icone - COLORE COMPLEMENTARE -->
+    <nav class="navigation-menu">
+        <ul>
+            <li><a href="#intro"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#01"><i class="fas fa-flask"></i> Igiene industriale</a></li>
+            <li><a href="#02"><i class="fas fa-mask"></i> Protezione respiratoria</a></li>
+            <li><a href="#03"><i class="fas fa-droplet"></i> Rischio chimico</a></li>
+            <li><a href="#04"><i class="fas fa-biohazard"></i> Agenti CMR</a></li>
+            <li><a href="#05"><i class="fas fa-virus"></i> Biologico & Legionella</a></li>
+            <li><a href="#06"><i class="fas fa-building"></i> Amianto</a></li>
+            <li><a href="#07"><i class="fas fa-bolt"></i> Rischi fisici</a></li>
+            <li><a href="#08"><i class="fas fa-radiation"></i> Radon</a></li>
+            <li><a href="#09"><i class="fas fa-chair"></i> Ergonomia</a></li>
+            <li><a href="#10"><i class="fas fa-door-closed"></i> Spazi confinati</a></li>
+            <li><a href="#11"><i class="fas fa-file-contract"></i> REACH & CLP</a></li>
+            <li><a href="#12"><i class="fas fa-user-tie"></i> RSPP & EHS</a></li>
+            <li><a href="#13"><i class="fas fa-handshake"></i> Assistenza tecnica</a></li>
+            <li><a href="#14"><i class="fas fa-chalkboard-teacher"></i> Formazione</a></li>
+            <li><a href="#15"><i class="fas fa-database"></i> JAMS</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Introduzione -->
+    <div class="intro" id="intro">
+        <p><strong>Studio Fini</strong> affianca aziende e organizzazioni nella <span class="highlight">valutazione e gestione dei rischi per la salute e la sicurezza nei luoghi di lavoro</span>, attraverso consulenza specialistica, indagini strumentali, monitoraggi, valutazioni tecniche e supporto alla compliance normativa.</p>
+        <p>Il nostro approccio parte dall'identificazione del pericolo, prosegue con la misurazione e la valutazione dell'esposizione e arriva alla definizione delle più efficaci misure di prevenzione, protezione e controllo.</p>
+        <p>Lo Studio opera con <span class="highlight">Igienisti Industriali Certificati</span>, con competenze specialistiche nel campo degli agenti chimici e biologici. L'attività si estende anche a rischi fisici, amianto, radon, ergonomia e altre valutazioni specialistiche.</p>
+        <p>Questa pagina web elenca sinteticamente i servizi che proponiamo. Per una visione completa si rimanda al nostro sito web ufficiale: <strong><a href="https://www.studiofini.net" target="_blank" rel="noopener noreferrer">www.studiofini.net</a></strong>.</p>
+    </div>
+    
+    <!-- Contenuto principale -->
+    <main>
+        <section id="01">
+            <header>
+                <h2>01 - Igiene industriale e valutazione dell'esposizione</h2>
+                <p class="subtitle">Misurare il rischio per poterlo gestire</p>
+            </header>
+            <article>
+                <p>Le indagini di igiene industriale consentono di determinare in modo oggettivo l'esposizione dei lavoratori agli agenti presenti negli ambienti di lavoro e di individuare le misure necessarie per controllarla.</p>
+                
+                <h3>Indagini di Igiene Industriale</h3>
+                <ul>
+                    <li>Progettazione e redazione di Indagini di Igiene Industriale, anche in riferimento alla UNI EN 689</li>
+                    <li>Identificazione degli agenti di rischio presenti nell'ambiente di lavoro</li>
+                    <li>Analisi delle mansioni e dei gruppi omogenei di esposizione</li>
+                    <li>Definizione delle strategie di campionamento</li>
+                    <li>Campionamenti personali e ambientali</li>
+                    <li>Misurazione dell'esposizione professionale</li>
+                    <li>Analisi dei campioni mediante laboratori specializzati</li>
+                    <li>Confronto dei risultati con VLEP/OELV e altri valori di riferimento applicabili</li>
+                    <li>Interpretazione dei risultati</li>
+                    <li>Valutazione dell'efficacia delle misure di prevenzione</li>
+                    <li>Definizione dei programmi di monitoraggio periodico</li>
+                    <li>Redazione di relazioni tecniche e documentazione di supporto al DVR</li>
+                </ul>
+                
+                <h3>Impianti di aspirazione ed emissioni diffuse</h3>
+                <ul>
+                    <li>Verifica dell'efficacia di captazione dei sistemi di aspirazione</li>
+                    <li>Valutazione delle condizioni di captazione alla sorgente</li>
+                    <li>Verifiche strumentali</li>
+                    <li>Individualzione delle criticità</li>
+                    <li>Verifica delle emissioni diffuse</li>
+                    <li>Supporto alla definizione di interventi migliorativi</li>
+                </ul>
+            </article>
+        </section>
+        
+        <section id="02">
+            <header>
+                <h2>02 - Protezione delle vie respiratorie e APVR</h2>
+                <p class="subtitle">Dalla scelta del dispositivo alla verifica della reale protezione del lavoratore</p>
+            </header>
+            <article>
+                <p>Una protezione respiratoria efficace non dipende soltanto dal DPI scelto, ma dalla corretta valutazione del rischio, dall'idoneità dell'APVR per lo specifico scenario, dalla sua adattabilità al portatore e dalla gestione dell'intero programma aziendale.</p>
+                
+                <h3>Fit Test</h3>
+                <p>Studio Fini esegue Fit Test degli apparecchi di protezione delle vie respiratorie, finalizzati a verificare l'adattabilità del facciale allo specifico utilizzatore. La UNI 11719:2025 conferma la prova di adattabilità per gli APVR con facciale a tenuta come parte della valutazione dell'idoneità sul singolo portatore.</p>
+                
+                <h3>Programma di Protezione delle Vie Respiratorie – PPVR</h3>
+                <ul>
+                    <li>Valutazione dei rischi respiratori</li>
+                    <li>Definizione dei criteri di scelta degli APVR</li>
+                    <li>Verifica dell'adeguatezza dei dispositivi</li>
+                    <li>Verifica dell'idoneità al portatore</li>
+                    <li>Organizzazione e gestione dei Fit Test</li>
+                    <li>Definizione delle modalità di utilizzo degli APVR</li>
+                    <li>Gestione, manutenzione, conservazione e sostituzione</li>
+                    <li>Definizione delle registrazioni previste dal programma</li>
+                    <li>Supporto alla formazione e all'addestramento</li>
+                    <li>Verifica periodica dell'efficacia del programma</li>
+                    <li>Revisione del PPVR in caso di variazione delle condizioni di esposizione o dei dispositivi utilizzati</li>
+                </ul>
+                
+                <h3>Assunzione dell'incarico di Responsabile del Programma di Protezione delle Vie Respiratorie</h3>
+                <p>Studio Fini assume l'incarico di Responsabile del Programma di Protezione delle Vie Respiratorie secondo UNI 11719:2025, supportando l'azienda nella redazione, attuazione, verifica e aggiornamento del programma.</p>
+            </article>
+        </section>
+        
+        <section id="03">
+            <header>
+                <h2>03 - Rischio chimico</h2>
+                <p class="subtitle">Gestione tecnica delle sostanze dalla valutazione documentale alla misura dell'esposizione</p>
+            </header>
+            <article>
+                <p>Studio Fini supporta le aziende nella valutazione e gestione dell'intero ciclo del rischio chimico.</p>
+                
+                <h3>Valutazione del rischio chimico</h3>
+                <ul>
+                    <li>Censimento delle sostanze e delle miscele presenti</li>
+                    <li>Analisi delle attività e dei processi</li>
+                    <li>Analisi delle Schede Dati di Sicurezza</li>
+                    <li>Identificazione delle proprietà pericolose</li>
+                    <li>Valutazione delle modalità e dei livelli di esposizione</li>
+                    <li>Valutazione del rischio per inalazione e contatto</li>
+                    <li>Indagini strumentali e campionamenti quando necessari</li>
+                    <li>Confronto con i valori limite di esposizione</li>
+                    <li>Individualzione delle misure di prevenzione e protezione</li>
+                    <li>Verifica dei DPI</li>
+                    <li>Supporto alla sostituzione delle sostanze pericolose</li>
+                    <li>Redazione della documentazione di valutazione del rischio chimico</li>
+                </ul>
+            </article>
+        </section>
+        
+        <section id="04">
+            <header>
+                <h2>04 - Agenti cancerogeni, mutageni e reprotossici</h2>
+                <p class="subtitle">Valutazione, esposizione, riduzione del rischio e gestione degli adempimenti</p>
+            </header>
+            <article>
+                <p>Studio Fini supporta le aziende nella gestione degli agenti <strong>CMR – Cancerogeni, Mutageni e Reprotossici</strong>.</p>
+                <ul>
+                    <li>Identificazione delle sostanze e degli agenti CMR</li>
+                    <li>Analisi di processi produttivi e mansioni</li>
+                    <li>Verifica delle SDS</li>
+                    <li>Valutazione dell'esposizione</li>
+                    <li>Monitoraggi ambientali e personali</li>
+                    <li>Indagini di igiene industriale</li>
+                    <li>Verifica dell'efficacia delle misure di prevenzione</li>
+                    <li>Definizione delle strategie di riduzione dell'esposizione</li>
+                    <li>Valutazione della possibilità di sostituzione</li>
+                    <li>Individualzione di misure tecniche, organizzative e procedurali</li>
+                    <li>Supporto alla gestione documentale</li>
+                    <li><strong>Assistenza alla compilazione e gestione del registro degli esposti a CMR</strong></li>
+                    <li>Programmi di monitoraggio periodico</li>
+                </ul>
+            </article>
+        </section>
+        
+        <section id="05">
+            <header>
+                <h2>05 - Rischio biologico e legionella</h2>
+                <p class="subtitle">Individualzione, valutazione e controllo degli agenti biologici</p>
+            </header>
+            <article>
+                <h3>Rischio biologico</h3>
+                <ul>
+                    <li>Analisi delle attività e delle possibili fonti di esposizione</li>
+                    <li>Valutazione dell'esposizione ad agenti biologici</li>
+                    <li>Sopralluoghi tecnici</li>
+                    <li>Campionamenti e analisi</li>
+                    <li>Individualzione delle criticità</li>
+                    <li>Definizione delle misure di prevenzione e controllo</li>
+                    <li>Gestione degli ambienti di lavoro</li>
+                    <li>Supporto alla gestione di situazioni emergenziali</li>
+                    <li>Redazione del <strong>Documento di Valutazione del Rischio Biologico</strong></li>
+                </ul>
+                
+                <h3>Legionella</h3>
+                <ul>
+                    <li>Valutazione del rischio Legionella</li>
+                    <li>Sopralluogo e analisi degli impianti</li>
+                    <li>Identificazione dei punti critici</li>
+                    <li>Pianificazione dei campionamenti</li>
+                    <li>Campionamento delle acque</li>
+                    <li>Analisi di laboratorio</li>
+                    <li>Interpretazione dei risultati</li>
+                    <li>Definizione delle misure preventive e correttive</li>
+                    <li>Programmi di monitoraggio</li>
+                    <li>Supporto tecnico nella gestione di eventuali positività e contaminazioni</li>
+                </ul>
+            </article>
+        </section>
+        
+        <section id="06">
+            <header>
+                <h2>06 - Amianto</h2>
+                <p class="subtitle">Dalla presenza del materiale alla gestione completa del rischio</p>
+            </header>
+            <article>
+                <p>Studio Fini offre un servizio specialistico per la valutazione e gestione dei <strong>Materiali Contenenti Amianto – MCA</strong>, dalla prima identificazione fino alla programmazione degli interventi.</p>
+                
+                <h3>Valutazione del rischio amianto</h3>
+                <ul>
+                    <li>Censimento e individuazione di materiali potenzialmente contenenti amianto</li>
+                    <li>Sopralluoghi tecnici</li>
+                    <li>Campionamento dei materiali</li>
+                    <li>Analisi di laboratorio</li>
+                    <li>Valutazione dello stato di conservazione</li>
+                    <li>Valutazione del rischio di esposizione</li>
+                    <li>Valutazione dei rischi ai sensi del Titolo IX, Capo III del D.Lgs. 81/2008</li>
+                    <li>Monitoraggi</li>
+                    <li>Definizione delle misure di gestione e controllo</li>
+                    <li>Supporto alla pianificazione degli interventi</li>
+                    <li>Supporto alla gestione di attività di bonifica, rimozione o confinamento</li>
+                </ul>
+                
+                <h3>Assunzione dell'incarico di Responsabile del Rischio Amianto – RRA</h3>
+                <p>Studio Fini assume l'incarico di Responsabile del Rischio Amianto, supportando il soggetto titolato nella gestione nel tempo dei materiali contenenti amianto.</p>
+            </article>
+        </section>
+        
+        <section id="07">
+            <header>
+                <h2>07 - Rischi fisici</h2>
+                <p class="subtitle">Misurazioni specialistiche per conoscere l'esposizione reale</p>
+            </header>
+            <article>
+                <h3>Rumore</h3>
+                <ul>
+                    <li>Rilievi fonometrici</li>
+                    <li>Analisi delle sorgenti</li>
+                    <li>Valutazione dell'esposizione dei lavoratori</li>
+                    <li>Determinazione dei livelli di esposizione</li>
+                    <li>Confronto con valori d'azione e valori limite</li>
+                    <li>Individualzione delle misure tecniche e organizzative</li>
+                    <li>Valutazione dei DPI uditivi</li>
+                    <li>Relazione tecnica di valutazione</li>
+                </ul>
+                
+                <h3>Vibrazioni</h3>
+                <ul>
+                    <li>Vibrazioni trasmesse al sistema mano-braccio</li>
+                    <li>Vibrazioni trasmesse al corpo intero</li>
+                    <li>Analisi di macchine, utensili e mezzi</li>
+                    <li>Misure strumentali</li>
+                    <li>Valutazioni attraverso dati disponibili quando applicabile</li>
+                    <li>Determinazione dell'esposizione</li>
+                    <li>Definizione delle misure di riduzione del rischio</li>
+                </ul>
+                
+                <h3>Campi elettromagnetici – CEM</h3>
+                <ul>
+                    <li>Censimento delle sorgenti</li>
+                    <li>Analisi di macchine, impianti e attrezzature</li>
+                    <li>Misurazioni strumentali</li>
+                    <li>Valutazione dell'esposizione</li>
+                    <li>Individualzione delle aree critiche</li>
+                    <li>Valutazione di lavoratori particolarmente sensibili</li>
+                    <li>Definizione delle misure preventive e protettive</li>
+                </ul>
+                
+                <h3>Radiazioni Ottiche Artificiali – ROA</h3>
+                <ul>
+                    <li>Valutazione di sorgenti UV, visibili e infrarosse</li>
+                    <li>Analisi di laser e sorgenti non coerenti</li>
+                    <li>Valutazioni mediante dati tecnici e/o misurazioni</li>
+                    <li>Verifica dell'esposizione</li>
+                    <li>Definizione delle misure di prevenzione</li>
+                    <li>Scelta dei sistemi di protezione e dei DPI</li>
+                </ul>
+                
+                <h3>Microclima e stress termico</h3>
+                <ul>
+                    <li>Rilievi microclimatici</li>
+                    <li>Temperatura dell'aria</li>
+                    <li>Umidità relativa</li>
+                    <li>Velocità dell'aria</li>
+                    <li>Temperatura radiante</li>
+                    <li>Valutazione degli ambienti moderati</li>
+                    <li>Valutazione degli ambienti severi caldi</li>
+                    <li>Valutazione degli ambienti severi freddi</li>
+                    <li>Individualzione degli interventi correttivi</li>
+                </ul>
+            </article>
+        </section>
+        
+        <section id="08">
+            <header>
+                <h2>08 - Radon</h2>
+                <p class="subtitle">Misurazione e gestione dell'esposizione negli ambienti di lavoro</p>
+            </header>
+            <article>
+                <ul>
+                    <li>Analisi preliminare dell'applicabilità degli obblighi</li>
+                    <li>Programmazione delle campagne di misurazione</li>
+                    <li>Misurazione della concentrazione di radon</li>
+                    <li>Coordinamento della dosimetria</li>
+                    <li>Interpretazione dei risultati</li>
+                    <li>Confronto con i livelli di riferimento</li>
+                    <li>Supporto all'integrazione nel DVR</li>
+                    <li>Assistenza in caso di superamento</li>
+                    <li>Supporto alla definizione e al coordinamento degli interventi di risanamento</li>
+                </ul>
+            </article>
+        </section>
+        
+        <section id="09">
+            <header>
+                <h2>09 - Ergonomia e movimentazione manuale dei carichi</h2>
+                <p class="subtitle">Valutare il sovraccarico biomeccanico e migliorare l'organizzazione del lavoro</p>
+            </header>
+            <article>
+                <ul>
+                    <li>Analisi delle mansioni</li>
+                    <li>Movimentazione manuale dei carichi</li>
+                    <li>Sollevamento e trasporto</li>
+                    <li>Attività di traino e spinta</li>
+                    <li>Attività caratterizzate da movimenti ripetitivi</li>
+                    <li>Valutazione del sovraccarico biomeccanico</li>
+                    <li>Analisi delle posture</li>
+                    <li>Applicazione di metodologie tecniche riconosciute</li>
+                    <li>Individualzione di interventi ergonomici</li>
+                    <li>Definizione di misure organizzative e procedurali</li>
+                </ul>
+            </article>
+        </section>
+        
+        <section id="10">
+            <header>
+                <h2>10 - Spazi confinati</h2>
+                <p class="subtitle">Valutazione tecnica e organizzazione della sicurezza negli ambienti confinati</p>
+            </header>
+            <article>
+                <ul>
+                    <li>Censimento degli spazi confinati e/o sospetti di inquinamento</li>
+                    <li>Analisi dei pericoli</li>
+                    <li>Valutazione del rischio</li>
+                    <li><strong>Redazione del Documento di Valutazione del Rischio Spazi Confinati</strong></li>
+                    <li>Supporto alla definizione delle procedure</li>
+                    <li>Supporto nella gestione degli accessi</li>
+                    <li>Definizione delle misure preventive e protettive</li>
+                    <li>Supporto alla gestione delle emergenze</li>
+                    <li>Gestione digitale delle informazioni attraverso JAMS</li>
+                </ul>
+            </article>
+        </section>
+        
+        <section id="11">
+            <header>
+                <h2>11 - REACH, CLP e Chemical compliance</h2>
+                <p class="subtitle">Supporto specialistico per la gestione normativa delle sostanze chimiche</p>
+            </header>
+            <article>
+                <p>Studio Fini affianca fabbricanti, importatori, utilizzatori a valle e aziende che impiegano prodotti chimici nella gestione degli adempimenti connessi ai Regolamenti <strong>REACH</strong> e <strong>CLP</strong>.</p>
+                
+                <h3>Consulenza REACH e CLP</h3>
+                <ul>
+                    <li>Audit di conformità REACH e CLP</li>
+                    <li>Verifica degli obblighi applicabili all'azienda</li>
+                    <li>Analisi delle sostanze e delle miscele</li>
+                    <li>Supporto alla classificazione</li>
+                    <li>Verifica della corretta gestione lungo la supply chain</li>
+                    <li>Verifica degli obblighi di autorizzazione e restrizione</li>
+                    <li>Supporto tecnico nella gestione delle prescrizioni normative</li>
+                    <li>Assistenza nella gestione delle sostanze chimiche</li>
+                </ul>
+                
+                <h3>ECHA Inquiry e registrazione REACH</h3>
+                <p>Supporto nella preparazione e gestione delle Inquiry presso ECHA, comprendente:</p>
+                <ul>
+                    <li>Verifica preliminare della sostanza</li>
+                    <li>Supporto alla corretta identificazione della sostanza</li>
+                    <li>Raccolta delle informazioni necessarie</li>
+                    <li>Predisposizione dell'Inquiry dossier in IUCLID</li>
+                    <li>Verifica del dossier</li>
+                    <li>Presentazione attraverso REACH-IT</li>
+                    <li>Gestione delle eventuali richieste di integrazione</li>
+                    <li>Gestione dell'esito dell'Inquiry</li>
+                    <li>Individualzione dei precedenti e potenziali co-registranti</li>
+                    <li>Supporto nella fase di data sharing</li>
+                    <li>Supporto all'accesso o alla costituzione della joint submission</li>
+                    <li>Assistenza nelle successive fasi del processo di registrazione REACH</li>
+                </ul>
+                
+                <h3>SDS ed eSDS</h3>
+                <ul>
+                    <li>Verifica della conformità delle Schede Dati di Sicurezza – SDS</li>
+                    <li>Verifica delle extended SDS – eSDS</li>
+                    <li>Analisi delle informazioni trasmesse lungo la catena di approvvigionamento</li>
+                    <li>Verifica della coerenza tra classificazione, utilizzi ed esposizione</li>
+                    <li>Supporto alla gestione documentale delle sostanze</li>
+                </ul>
+                
+                <h3>Gestione avanzata dei chemicals</h3>
+                <ul>
+                    <li>Valutazione delle incompatibilità chimiche</li>
+                    <li>Sostanze soggette ad autorizzazione REACH</li>
+                    <li>Sostanze soggette a restrizione</li>
+                    <li>Gestione delle SVHC – Substances of Very High Concern</li>
+                    <li>Gestione dei POP – Persistent Organic Pollutants</li>
+                    <li>Aspetti relativi alla normativa Seveso, quando applicabile</li>
+                    <li>Ricerca e valutazione di sostanze e processi alternativi</li>
+                </ul>
+            </article>
+        </section>
+        
+        <section id="12">
+            <header>
+                <h2>12 - RSPP, Servizio di prevenzione e protezione ed EHS</h2>
+                <p class="subtitle">Supporto tecnico continuativo per la gestione della sicurezza aziendale</p>
+            </header>
+            <article>
+                <h3>Assunzione incarico RSPP</h3>
+                <ul>
+                    <li>Assunzione dell'incarico di <strong>RSPP esterno</strong></li>
+                    <li>Supporto tecnico al Servizio di Prevenzione e Protezione</li>
+                    <li>Individualzione e valutazione dei rischi</li>
+                    <li>Supporto alla definizione delle misure preventive e protettive</li>
+                    <li>Supporto alla gestione del piano di miglioramento</li>
+                    <li>Assistenza tecnica al Datore di Lavoro</li>
+                    <li>Supporto nella gestione degli adempimenti</li>
+                    <li>Formazione specifica</li>
+                </ul>
+                
+                <h3>Supporto EHS</h3>
+                <p>Servizi di supporto integrato Environment, Health & Safety, anche nell'ambito di sistemi organizzativi strutturati:</p>
+                <ul>
+                    <li>Supporto alla gestione EHS aziendale</li>
+                    <li>Organizzazione delle attività HSE</li>
+                    <li>Assistenza nell'individualzione delle priorità</li>
+                    <li>Gestione delle azioni di miglioramento</li>
+                    <li>Supporto alla compliance</li>
+                    <li>Gestione e monitoraggio delle scadenze</li>
+                    <li>Supporto tecnico ai sistemi di gestione per la salute e sicurezza</li>
+                    <li>Supporto nell'ambito ISO 45001</li>
+                </ul>
+            </article>
+        </section>
+        
+        <section id="13">
+            <header>
+                <h2>13 - Assistenza tecnica e rapporti con gli organi di controllo</h2>
+                <p class="subtitle">Competenza specialistica nelle situazioni più delicate</p>
+            </header>
+            <article>
+                <p>Studio Fini fornisce supporto tecnico alle aziende anche in occasione di verifiche, contestazioni o situazioni che richiedano un approfondimento specialistico.</p>
+                <ul>
+                    <li>Assistenza tecnica nei rapporti con gli Organi di controllo</li>
+                    <li>Analisi della documentazione</li>
+                    <li>Valutazioni e approfondimenti specialistici</li>
+                    <li>Indagini e misurazioni a supporto</li>
+                    <li>Redazione di relazioni tecniche</li>
+                    <li>Supporto tecnico nei contenziosi con gli Organi di controllo</li>
+                    <li>Affiancamento all'azienda e ai propri consulenti</li>
+                </ul>
+            </article>
+        </section>
+        
+        <section id="14">
+            <header>
+                <h2>14 - Formazione e supporto specialistico</h2>
+                <p class="subtitle">Trasferire competenze per trasformare la valutazione in prevenzione concreta</p>
+            </header>
+            <article>
+                <p>Studio Fini eroga formazione e supporto specialistico sulle tematiche direttamente collegate alle proprie aree di competenza, con particolare attenzione ai rischi specifici e alla corretta applicazione delle misure preventive e protettive.</p>
+                <ul>
+                    <li>Rischio chimico</li>
+                    <li>Agenti CMR</li>
+                    <li>Rischio biologico</li>
+                    <li>Amianto</li>
+                    <li>APVR</li>
+                    <li>Procedure operative</li>
+                    <li>Rischi fisici</li>
+                    <li>Spazi confinati</li>
+                    <li>Tematiche EHS e sicurezza sul lavoro</li>
+                </ul>
+            </article>
+        </section>
+        
+        <section id="15">
+            <header>
+                <h2>15 - JAMS</h2>
+                <p class="subtitle">Just Another Management System – La gestione EHS diventa digitale</p>
+            </header>
+           <article>
+        <!-- Containere per il logo -->
+        <div class="logo-container">
+            <img src="D:\jams.png" alt="Logo JAMS">
+        </div> 
+                <p><strong>JAMS</strong> è il software SaaS di Studio Fini per la gestione della sicurezza sul lavoro e degli adempimenti ambientali, progettato per centralizzare informazioni, documenti, attività e scadenze in un unico ambiente digitale.</p>
+                
+                <h3>I 6 moduli JAMS</h3>
+                <ul>
+                    <li><strong>Scadenziario</strong>: Gestione centralizzata delle scadenze, ricorrenze, responsabilità e alert</li>
+                    <li><strong>DVR</strong>: Documento di Valutazione dei Rischi digitale, organizzazione dei dati aziendali, rischi, mansioni, misure di prevenzione e piano di miglioramento</li>
+                    <li><strong>Gestione Ambientale</strong>: Gestione e monitoraggio di autorizzazioni, prescrizioni e adempimenti ambientali, comprese AUA/AIA</li>
+                    <li><strong>Riunioni</strong>: Programmazione delle riunioni, verbalizzazione, decisioni, azioni, responsabili e relative scadenze</li>
+                    <li><strong>Eventi</strong>: Gestione di infortuni, near miss, non conformità, situazioni pericolose, azioni correttive e follow-up</li>
+                    <li><strong>Formazione</strong>: Piano formativo, matrice mansioni-corsi, scadenze, presenze e archivio attestati</li>
+                </ul>
+            </article>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Studio Fini Srl - Tutti i diritti riservati</p>
+        <p>Sede legale: Via Francesco Raibolini il Francia, 29 – 40069 Zola Predosa (BO)</p>
+        <p>Sede operativa: Via Marsilio da Padova 8 – 47122 Forlì (FC)</p>
+        <p>+39 366 7076373 - info@studiofini.net</p>
+    </footer>
+</body>
+</html>
