@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .top-bar {
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            padding: 20px 50px;
+            text-align: center;
+        }
+        
+        .brand-name {
+            color: white;
+            font-size: 1.5em;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1a2a6c 0%, #2c5364 100%);
+            color: white;
+            padding: 40px 50px;
+        }
+        
+        .header h1 {
+            font-size: 1.8em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+        
+        .date {
+            opacity: 0.9;
+            font-size: 0.95em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .date::before {
+            content: "📅";
+        }
+        
+        .content {
+            padding: 50px;
+            flex-grow: 1;
+        }
+        
+        h2 {
+            color: #1a2a6c;
+            font-size: 1.3em;
+            margin: 35px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e7ef;
+        }
+        
+        p {
+            margin-bottom: 18px;
+            text-align: justify;
+        }
+        
+        ul {
+            margin: 20px 0 25px 25px;
+            list-style-type: none;
+        }
+        
+        ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+        }
+        
+        ul li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #1a2a6c;
+            font-weight: bold;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(to right, rgba(26, 42, 108, 0.08), rgba(32, 58, 67, 0.08));
+            border-left: 4px solid #1a2a6c;
+            padding: 25px 30px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            color: white;
+            padding: 25px 50px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-text {
+            font-size: 0.9em;
+            opacity: 0.9;
+            letter-spacing: 0.5px;
+        }
+        
+        .footer-text a {
+            color: #a8c5e8;
+            text-decoration: none;
+        }
+        
+        .footer-text a:hover {
+            text-decoration: underline;
+        }
+        
+        .source {
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 1px solid #e0e7ef;
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        .source a {
+            color: #1a2a6c;
+            text-decoration: none;
+            word-break: break-all;
+        }
+        
+        .source a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 10px;
+            }
+            
+            .top-bar {
+                padding: 15px 25px;
+            }
+            
+            .brand-name {
+                font-size: 1.2em;
+                letter-spacing: 1px;
+            }
+            
+            .header {
+                padding: 30px 25px;
+            }
+            
+            .header h1 {
+                font-size: 1.4em;
+            }
+            
+            .content {
+                padding: 30px 25px;
+            }
+            
+            .footer {
+                padding: 20px 25px;
+            }
+            
+            ul {
+                margin-left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-bar">
+            <div class="brand-name">News Studio Fini</div>
+        </div>
+        
+        <div class="header">
+            <h1>L'ECHA raccomanda la classificazione dell'acido trifluoroacetico (TFA) come sostanza reprotossica</h1>
+            <div class="date">Helsinki, 6 ottobre 2026</div>
+        </div>
+        
+        <div class="content">
+            <p>Il Comitato per la valutazione dei rischi (RAC) dell'Agenzia europea per le sostanze chimiche (ECHA) raccomanda di classificare l'acido trifluoroacetico (TFA), nonché i suoi sali inorganici, come sostanze tossiche per la riproduzione, persistenti, mobili e tossiche e molto persistenti e molto mobili, che causano una contaminazione di lunga durata delle risorse idriche.</p>
+            
+            <p>Dopo la sua adozione nel giugno 2026, il parere definitivo del RAC è ora disponibile sul sito web dell'ECHA ed è stato inviato alla Commissione europea (CE).</p>
+            
+            <p>Il RAC raccomanda per il TFA, il NaTFA e altri sali inorganici del TFA una classificazione come:</p>
+            
+            <ul>
+                <li>tossiche per la riproduzione di categoria 1B per gli effetti avversi sullo sviluppo e di categoria 2 per gli effetti avversi sulla funzione sessuale e sulla fertilità;</li>
+                <li>persistente, mobile e tossica (PMT); e</li>
+                <li>sostanza molto persistente e molto mobile (vPvM), che può causare una contaminazione molto duratura e diffusa delle risorse idriche.</li>
+                <li>(Solo per il TFA) - sostanza tossica acuta per via orale di categoria 4 con un valore stimato di tossicità acuta pari a 500 mg/kg di peso corporeo e sostanza tossica acuta per inalazione di categoria 3 con un valore stimato di tossicità acuta pari a 3 mg/L (vapori).</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <p>Il TFA è una sostanza chimica sintetica utilizzata nei laboratori e nell'industria. Il TFA è anche un potenziale prodotto di degradazione di alcune sostanze fluorurate (ad esempio i PFAS), che sono utilizzate, per esempio, nei gas fluorurati e nei principi attivi dei biocidi e dei prodotti fitosanitari.</p>
+                
+                <p>Il RAC ha osservato che il TFA e i suoi sali inorganici si decompongono nell'organismo e nell'ambiente in elementi che provocano sostanzialmente gli stessi effetti tossici.</p>
+                
+                <p>Per l'ambiente, la preoccupazione riguarda in particolare il lungo termine. Il TFA è estremamente persistente e altamente mobile, il che significa che non si decompone facilmente e può spostarsi attraverso il suolo e l'acqua. Ciò può comportare una contaminazione diffusa e molto duratura delle acque sotterranee e di altre risorse idriche. Il TFA è già incluso nell'elenco delle sostanze con una classificazione e un'etichettatura armonizzata a livello dell'UE ed è inoltre classificato come nocivo per la vita acquatica con effetti di lunga durata.</p>
+            </div>
+            
+            <h2>Prossimi passi</h2>
+            
+            <p>I pareri del RAC sono stati ora inviati alla CE. Qualora la Commissione, in consultazione con gli Stati membri e le parti interessate, ritenesse opportuna l'armonizzazione della classificazione e dell'etichettatura delle sostanze, ciò comporterebbe classificazioni armonizzate giuridicamente vincolanti per il TFA e il NaTFA, nonché per altri sali inorganici del TFA, con vari requisiti ai sensi del regolamento CLP. La classificazione armonizzata può inoltre innescare azioni normative ai sensi della legislazione settoriale dell'UE.</p>
+            
+            <h2>Contesto</h2>
+            
+            <p>Il Comitato per la valutazione dei rischi dell'ECHA ha approvato i propri pareri sulle classificazioni armonizzate per il TFA e i suoi sali inorganici nel giugno 2026, a seguito della proposta delle autorità tedesche, delle discussioni in seno al comitato e tenendo conto delle osservazioni di terzi pervenute durante una consultazione.</p>
+            
+            <div class="source">
+                <strong>Fonte:</strong><br>
+                <a href="https://echa.europa.eu/it/-/echa-recommends-tfa-s-classification-as-a-reprotoxic-substance">https://echa.europa.eu/it/-/echa-recommends-tfa-s-classification-as-a-reprotoxic-substance</a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-text">2026 - Studio Fini - <a href="http://www.studiofini.net">www.studiofini.net</a></div>
+        </div>
+    </div>
+</body>
+</html>
